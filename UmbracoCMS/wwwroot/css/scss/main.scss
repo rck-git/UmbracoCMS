@@ -1,0 +1,65 @@
+theme-orange {
+    color: D9C3A9;
+}
+
+header {
+    background-color: #4F5955;
+    width:100%;
+}
+body{
+   margin:0;
+   background-color:beige;
+   
+}
+footer {
+    background-color: #0E0E0E;
+}
+
+.success {
+    .container {
+
+
+        .subsection {
+            background-color: #4F5955;
+        }
+    }
+}
+.SmilingContainer {
+    background-color: #F7F7F7;
+    display: grid;
+    padding-top: 3rem;
+    grid-template-columns: 1fr 1fr;
+
+    .contactInfo {
+        display: grid;
+    }
+
+    .happyGuy {
+        display: grid;
+        position: relative;
+        left: 30%;
+        z-index: 3;
+
+        #bgOddSquare {
+            position: absolute;
+            z-index: -1;
+            bottom: 0;
+            left: -30; /* Note: This value may need a unit (e.g., px) */
+            height: 64%;
+            width: 40%;
+        }
+
+        #dot {
+            position: absolute;
+            z-index: -55;
+            left: 11%;
+            width: 25%;
+            height: 100%;
+        }
+
+        #guy {
+            height: 100%;
+            width: 25%;
+        }
+    }
+}

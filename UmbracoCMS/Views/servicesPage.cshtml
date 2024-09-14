@@ -1,0 +1,45 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@{
+	Layout = "mainLayout.cshtml";
+
+
+	var selection = Umbraco.Content(Guid.Parse("16adf126-0845-483f-990a-2f9c3ce42b49"))
+	.Children()
+	.Where(x => x.IsVisible())
+	.OrderBy(x => x.Name);
+}
+<div class="breadCrumb">
+	<h1>
+		@Model.Value("serviceTopTitle")
+	</h1>
+	<a href="@Model.Value("breadCrumbUrl")">@Model.Value("breadCrumbUrl")</a>
+</div>
+
+<h1>
+	@Model.Value("servicesTitle")
+</h1>
+<div class="servicesOverview">
+	<ul>
+		@foreach (var item in selection)
+		{
+			<li>
+				<h2>
+					@item.Value("detailsMainTitle")
+				</h2>
+
+				<img src="@item.Value("detailMainImage")" alt="Details image">
+				<p>
+					@item.Value("detailPreviewParagraph")
+				</p>
+				<a href="@item.Url()">@item.Name()</a>
+			</li>
+		}
+	</ul>
+</div>
+
+@await Html.PartialAsync("static/nextProjectSmilingGuy")
+
+
+
+

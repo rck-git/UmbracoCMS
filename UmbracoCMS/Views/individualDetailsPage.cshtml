@@ -1,0 +1,85 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@{
+	Layout = "mainLayout.cshtml";
+	var keypoints1 = Model.Value<IEnumerable<string>>("detailedKeyPoints");
+	var keypoints2 = Model.Value<IEnumerable<string>>("detailedKeyPoints2");
+	var keypoints3 = Model.Value<IEnumerable<string>>("detailedKeyPoints3");
+	
+		
+	<!-- var keypoints2 = @Model.Value("detailedKeyPoints2"); -->
+}
+
+<div class="detail container">
+	<h5>
+		@Model.Value("detailMainTitle")
+	</h5>
+	<img src="@Model.Value("detailMainImage")" alt="Details image">
+	
+	<h1>
+		@Model.Value("detailedH1")
+	</h1>
+	<ul>
+		
+		@if(keypoints1 != null)
+		{
+			@foreach (var points in keypoints1)
+			{
+				<li>
+					<p>
+						@points
+					</p>
+				</li>
+			}
+		}
+		
+		
+		
+	</ul>
+	<h2>	
+		@Model.Value("detailedH2")
+	</h2>
+	<p>
+		@Model.Value("detailedParagraph")
+	</p>
+	<ul>
+		@if (keypoints2 != null)
+		{
+			@foreach (var points in keypoints2)
+			{
+				<li>
+					<p>
+						@points
+					</p>
+				</li>
+			}
+		}
+	</ul>
+	<p>
+		@Model.Value("detailedParagraph2")
+	</p>
+	<img src="@Model.Value("detailedPicture")" alt="detailed image" />
+	<h3>	
+		@Model.Value("detailedH3")
+	</h3>
+	<p>
+		@Model.Value("detailedParagraph3")
+	</p>
+	<ul>
+	@if (keypoints3 != null)
+		{
+			@foreach (var points in keypoints3)
+			{
+				<li>
+					<p>
+						@points
+					</p>
+				</li>
+			}
+		}
+	</ul>
+	
+</div>
+<div>
+	@await Html.PartialAsync("static/nextProjectSmilingGuy")
+</div>

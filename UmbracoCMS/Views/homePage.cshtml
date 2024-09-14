@@ -1,0 +1,112 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@using Umbraco.Cms.Core.Models;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@{
+	Layout = "mainLayout.cshtml";
+		
+}
+<section class="hero">
+	<h1>
+		@Model.Value("title")
+	</h1>
+	<img width="100%" src="@Model.Value("heroImage")" alt="hero girl in glasses">
+</section>
+
+<section class="about">
+	<div class="container">
+		<h6>
+			@Model.Value("aboutSmallTitle")
+		</h6>
+		<h2>
+			@Model.Value("aboutTitle")
+		</h2>
+		<h5>
+			@Model.Value("ceoQuoteParagraph")
+		</h5>
+		<p>
+			@Model.Value("aboutParagraph")
+		</p>
+
+		<img src="@Model.Value("ceoSignatureImage")" alt="ceo signature">
+		<p>
+			@Model.Value("ceoNameParagraph")
+		</p>
+		<!-- <div class="callbackForm">
+			<h6>
+		@Model.Value("formTitle")
+			</h6>
+
+			<editForm enctype="multipart/form-data" novalidate>
+
+				<input type="text" />
+				<label name="@Model.Value("formNameField")" />
+
+				<input type="email" />
+				<label name="@Model.Value("formEmailField") />
+
+				<input type="tel" />
+				<label name="@Model.Value("formPhoneField")  />
+
+				<input type="submit" value="Submit" class="btn btn-primary">@Model.Value("formSubmitButton")</input>
+			</editForm>
+		</div> -->
+	</div>
+	
+</section>
+<section class="ourServices">
+	<div class="container">
+		<div class="service">
+			<a href="" target=""></a>
+			<h3>@Model.Value("servicesService")</h3>
+			<img src="@Model.Value("servicesImageUrl")" />
+			<p>@Model.Value("servicesParagraph")</p>
+		</div>
+	</div>
+	<div class="pagination">
+	</div>
+</section>
+<section class="success">
+	<div class="container">
+		<div>
+			<h2>
+				@Model.Value("successTitle")
+			</h2>
+			<h5>
+				@Model.Value("successSubTitle")
+			</h5>
+			<p>
+				@Model.Value("successParagraph")
+			</p>
+			<a class="btn">
+				@Model.Value("successButton")
+			</a>
+		</div>
+		
+		<div class="successImages">
+			<img src="@Model.Value("successImage")" alt="successful people">
+			<img src="@Model.Value("successBg")" alt="successful background">
+		</div>
+		
+		<div class="subSection">
+			<h6>
+				@Model.Value("successSmallTitle")
+			</h6>
+			<h2>
+				@Model.Value("successTitle2")
+			</h2>
+			<ul>
+				<li>
+					@Model.Value("successList")
+				</li>
+			</ul>
+			<div class="successImages2">
+			<img src="@Model.Value("successImage2")" alt="People laughing">
+			<img src="@Model.Value("successBg2")" alt="successful background">
+
+			
+			</div>
+		</div>
+	</div>	
+			
+	
+</section>

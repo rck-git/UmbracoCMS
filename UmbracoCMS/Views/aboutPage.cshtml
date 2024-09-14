@@ -1,0 +1,13 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@using Umbraco.Cms.Core.Models;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@{
+	Layout = "mainLayout.cshtml";
+}
+
+<h1>
+	@Model.Value("title")
+</h1>
+    
+
+@await Html.PartialAsync("static/nextProjectSmilingGuy")

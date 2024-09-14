@@ -1,0 +1,27 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@{
+	Layout = "mainLayout.cshtml";
+
+	var selection = Umbraco.Content(Guid.Parse("6b344d3a-8e6e-4683-83c4-f208ffc09d73"))
+    .ChildrenOfType("projectDetailsPage")
+    .Where(x => x.IsVisible());
+}
+<div class="projectsOverview">
+	<ul>
+		@foreach (var item in selection)
+		{
+			<li>
+				<h2>
+					@Model.Value("projectMainTitle", fallback: Fallback.ToAncestors)
+				</h2>
+				
+				<img src="@item.Value("projectMainImage")" alt="project image">
+				<p>
+					@item.Value("projectsPreviewParagraph")
+				</p>
+				<a href="@item.Url()">@item.Name()</a>
+			</li>
+		}
+	</ul>
+</div>
