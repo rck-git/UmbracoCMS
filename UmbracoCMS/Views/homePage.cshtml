@@ -3,18 +3,32 @@
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
 @{
 	Layout = "mainLayout.cshtml";
-		
+
+	var successList = Model.Value<IEnumerable<string>>("successList");
+	
 }
 <section class="hero">
-	<h1>
-		@Model.Value("title")
-	</h1>
-	<img width="100%" src="@Model.Value("heroImage")" alt="hero girl in glasses">
+	<div class="heroContainer">
+
+		<div class="heroText">
+			<div class="heroH1">
+				<h1>
+					@Model.Value("heroTitle")<br><span>@Model.Value("heroSpan")</span>@Model.Value("heroTitle2")
+				</h1>
+			</div>
+			<p>
+				@Model.Value("heroParagraph")
+			</p>
+			<a class="contactButton" href="/about">@Model.Value("contactButton")</a>
+		</div>
+		<img width="100%" src="@Model.Value("heroImage")" alt="hero girl in glasses">
+	</div>
+	
 </section>
 
 <section class="about">
 	<div class="container">
-		<h6>
+		<h6 class="sectionSubText">
 			@Model.Value("aboutSmallTitle")
 		</h6>
 		<h2>
@@ -54,24 +68,21 @@
 	
 </section>
 <section class="ourServices">
-	<div class="container">
-		<div class="service">
-			<a href="" target=""></a>
-			<h3>@Model.Value("servicesService")</h3>
-			<img src="@Model.Value("servicesImageUrl")" />
-			<p>@Model.Value("servicesParagraph")</p>
-		</div>
-	</div>
-	<div class="pagination">
-	</div>
+	<h6 class="sectionSubText">@Model.Value("servicesSmallTitle")</h6>
+	<h1>
+		@Model.Value("servicesSectionTitle", fallback: Fallback.ToAncestors)
+	</h1>
+	@await Html.PartialAsync("static/ourServices")
+</section>
+<section class="trusted">
 </section>
 <section class="success">
 	<div class="container">
-		<div>
+		<div class="trusted">
 			<h2>
 				@Model.Value("successTitle")
 			</h2>
-			<h5>
+			<h5 class="sectionSubText">
 				@Model.Value("successSubTitle")
 			</h5>
 			<p>
@@ -80,28 +91,42 @@
 			<a class="btn">
 				@Model.Value("successButton")
 			</a>
+			<img id="successBg" src="@Model.Value("successBg")" class="colored-svg" alt="successful background">
 		</div>
 		
 		<div class="successImages">
-			<img src="@Model.Value("successImage")" alt="successful people">
-			<img src="@Model.Value("successBg")" alt="successful background">
+
+			<img id="successImage" src="@Model.Value("successImage")" alt="successful people">
+	
 		</div>
 		
 		<div class="subSection">
-			<h6>
+			<h6 class="sectionSubText">
 				@Model.Value("successSmallTitle")
 			</h6>
 			<h2>
 				@Model.Value("successTitle2")
 			</h2>
-			<ul>
-				<li>
-					@Model.Value("successList")
-				</li>
-			</ul>
+			<img id="successBg2" src="@Model.Value("successBg2")" alt="successful background">
+
+			<div class="storyBoxes">
+				<div class="storyBox">
+					<span>@Model.Value("successStory1Span")</span>
+					@Model.Value("successStory1")
+				</div>
+				<div class="storyBox">
+					<span>@Model.Value("successStory2Span")</span>
+					@Model.Value("successStory2")
+				</div>
+				<div class="storyBox">
+					<span>@Model.Value("successStory3Span")</span>
+					@Model.Value("successStory3")
+				</div>
+			</div>
+		
 			<div class="successImages2">
 			<img src="@Model.Value("successImage2")" alt="People laughing">
-			<img src="@Model.Value("successBg2")" alt="successful background">
+			
 
 			
 			</div>
@@ -110,3 +135,5 @@
 			
 	
 </section>
+
+

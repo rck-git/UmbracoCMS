@@ -9,15 +9,13 @@
 	.Where(x => x.IsVisible())
 	.OrderBy(x => x.Name);
 }
-<div class="breadCrumb">
+<div class="servicesOverview2">
 	<h1>
-		@Model.Value("serviceTopTitle")
+		@Model.Value("servicesTitle", fallback: Fallback.ToAncestors)
 	</h1>
-	<a href="@Model.Value("breadCrumbUrl")">@Model.Value("breadCrumbUrl")</a>
-</div>
-
-<h1>
-	@Model.Value("servicesTitle")
+	@await Html.PartialAsync("static/ourServices")
+@* <h1>
+	@ViewBag.Title
 </h1>
 <div class="servicesOverview">
 	<ul>
@@ -36,8 +34,8 @@
 			</li>
 		}
 	</ul>
+</div> *@
 </div>
-
 @await Html.PartialAsync("static/nextProjectSmilingGuy")
 
 

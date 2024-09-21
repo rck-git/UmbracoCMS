@@ -1,0 +1,34 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@{
+
+	var selection = Umbraco.Content(Guid.Parse("16adf126-0845-483f-990a-2f9c3ce42b49"))
+	.Children()
+	.Where(x => x.IsVisible())
+	.OrderBy(x => x.Name);
+}
+
+<div class="servicesOverview container">
+	<ul>
+		@foreach (var item in selection)
+		{
+			<li>
+				<a href="@item.Url()">
+					<h2>
+						@item.Value("detailsMainTitle")
+						@item.Name()
+					</h2>
+					<img src="@item.Value("detailMainImage")" alt="Details image">
+					<p>
+						@item.Value("detailPreviewParagraph")
+					</p>
+				</a>
+			</li>
+		}
+	</ul>
+</div>
+
+
+
+
+

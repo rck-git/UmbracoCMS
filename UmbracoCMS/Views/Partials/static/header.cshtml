@@ -1,0 +1,19 @@
+﻿<header>
+	<div class="container">
+		<p>
+			@Model.Value("companyAddress", fallback: Fallback.ToAncestors)
+		</p>
+
+		<div class="socials">
+			@if (headerUrlList != null)
+			{
+				@foreach (var link in headerUrlList)
+				{
+					<a href="@link.Url" target="@link.Target">@link.Name</a>
+				}
+			}
+		</div>
+
+	</div>
+
+</header>
