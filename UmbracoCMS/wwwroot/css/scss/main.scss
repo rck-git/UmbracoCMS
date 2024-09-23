@@ -150,6 +150,20 @@ body {
 footer {
     width: 100%;
     background-color: #0E0E0E;
+    display:flex;
+    padding-left:7rem;
+    font-size:14px;
+
+    p {
+        color: $primary-color;
+        display:inline;
+    }
+
+    a {
+        display: inline;
+        color:$third-color;
+        text-decoration:none;
+    }
 }
 
 
@@ -396,14 +410,16 @@ footer {
     .subSection {
         background-color: $primary-color;
         position: relative;
-        display:flex;
-        flex-direction:column;
-        padding-bottom:3rem;
-        img {
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 25rem;
+
+        #successBg2 {
+            padding-top: 5rem;
+            padding-left: 5rem;
             position: absolute;
             z-index: 0;
-            display: flex;
-            justify-content: center;
+            width: 90%;
         }
 
         h6 {
@@ -421,6 +437,9 @@ footer {
         .storyBoxes {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
+            padding: 0 10rem 0 10rem;
+            gap: 5rem;
+            z-index: 3;
 
 
             .storyBox {
@@ -443,59 +462,145 @@ footer {
         .successImages2 {
             display: flex;
             justify-content: center;
+            z-index: 3;
 
+            #successImage2 {
+            }
 
             img {
-                display: flex;
+            }
+        }
+    }
+
+
+    .successImages2 {
+        justify-content: center;
+        z-index: 3;
+        position: relative;
+        top: -16rem;
+        display:flex;
+
+        #successImage2 {
+        }
+
+        img {
+        }
+    }
+}
+.projects {
+    padding-bottom: 3rem;
+
+    span {
+        padding-left: 4rem;
+    }
+
+    h1 {
+        padding-left: 4rem;
+        padding-bottom: 3rem;
+    }
+}
+.recentProjects {
+    
+
+    ul {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        padding: 0;
+        height: 480px;
+        width: 100%;
+
+
+        li {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+
+            p {
+                display: none;
+            }
+
+            h2 {
+                display: none;
+            }
+
+            img {
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+            }
+
+            a {
+                position: absolute;
+                bottom: 0;
+                width: 100%;
+                background-color: #4F5955;
+                opacity: 80%;
+                padding: 2rem;
+                color: white;
+                text-decoration: none;
+                font-weight:bold;
+
+                &:hover {
+                    color:$sub-color;
+                    opacity: 100%;
+                    padding: 4rem;
+                    transition:0.3s;
+                }
             }
         }
     }
 }
+.brands {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: auto;
 
-.success {
-    .container {
+    @media(min-width:1400px) {
+        gap: 3rem;
+        padding:3rem;
+    }
 
-
-        .subsection {
-        }
+    .brand {
     }
 }
-.SmilingContainer {
-    background-color: #F7F7F7;
-    display: grid;
-    padding-top: 3rem;
-    grid-template-columns: 1fr 1fr;
-
-    .contactInfo {
+    .SmilingContainer {
+        background-color: #F7F7F7;
         display: grid;
+        padding-top: 3rem;
+        grid-template-columns: 1fr 1fr;
+
+        .contactInfo {
+            display: grid;
+        }
+
+        .happyGuy {
+            display: grid;
+            position: relative;
+            left: 30%;
+            z-index: 3;
+
+            #bgOddSquare {
+                position: absolute;
+                z-index: -1;
+                bottom: 0;
+                left: -30; /* Note: This value may need a unit (e.g., px) */
+                height: 64%;
+                width: 40%;
+            }
+
+            #dot {
+                position: absolute;
+                z-index: -55;
+                left: 11%;
+                width: 25%;
+                height: 100%;
+            }
+
+            #guy {
+                height: 100%;
+                width: 25%;
+            }
+        }
     }
-
-    .happyGuy {
-        display: grid;
-        position: relative;
-        left: 30%;
-        z-index: 3;
-
-        #bgOddSquare {
-            position: absolute;
-            z-index: -1;
-            bottom: 0;
-            left: -30; /* Note: This value may need a unit (e.g., px) */
-            height: 64%;
-            width: 40%;
-        }
-
-        #dot {
-            position: absolute;
-            z-index: -55;
-            left: 11%;
-            width: 25%;
-            height: 100%;
-        }
-
-        #guy {
-            height: 100%;
-            width: 25%;
-        }
-    }
-}

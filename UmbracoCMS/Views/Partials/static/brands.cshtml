@@ -1,0 +1,20 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@using Umbraco.Cms.Core.Models;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+
+
+@{
+	
+	
+		var brandsList = Model.Value<IEnumerable<IPublishedContent>>("brandsList", fallback: Fallback.ToAncestors);
+
+}
+
+<div class="brands container">
+	@foreach (var item in brandsList)
+	{
+		<div class="brand">
+		<img src="@item.Url()" />
+		</div>
+	}
+</div>

@@ -115,6 +115,18 @@ body {
 footer {
   width: 100%;
   background-color: #0E0E0E;
+  display: flex;
+  padding-left: 7rem;
+  font-size: 14px;
+}
+footer p {
+  color: #4F5955;
+  display: inline;
+}
+footer a {
+  display: inline;
+  color: #F2EDDC;
+  text-decoration: none;
 }
 
 .hero {
@@ -303,13 +315,14 @@ footer {
   position: relative;
   display: flex;
   flex-direction: column;
-  padding-bottom: 3rem;
+  padding-bottom: 25rem;
 }
-.success .subSection img {
+.success .subSection #successBg2 {
+  padding-top: 5rem;
+  padding-left: 5rem;
   position: absolute;
   z-index: 0;
-  display: flex;
-  justify-content: center;
+  width: 90%;
 }
 .success .subSection h6 {
   text-align: center;
@@ -324,6 +337,9 @@ footer {
 .success .subSection .storyBoxes {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  padding: 0 10rem 0 10rem;
+  gap: 5rem;
+  z-index: 3;
 }
 .success .subSection .storyBoxes .storyBox {
   display: flex;
@@ -342,11 +358,80 @@ footer {
 .success .subSection .successImages2 {
   display: flex;
   justify-content: center;
+  z-index: 3;
 }
-.success .subSection .successImages2 img {
+.success .successImages2 {
+  justify-content: center;
+  z-index: 3;
+  position: relative;
+  top: -16rem;
   display: flex;
 }
+.projects {
+  padding-bottom: 3rem;
+}
+.projects span {
+  padding-left: 4rem;
+}
+.projects h1 {
+  padding-left: 4rem;
+  padding-bottom: 3rem;
+}
 
+.recentProjects ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  padding: 0;
+  height: 480px;
+  width: 100%;
+}
+.recentProjects ul li {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.recentProjects ul li p {
+  display: none;
+}
+.recentProjects ul li h2 {
+  display: none;
+}
+.recentProjects ul li img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.recentProjects ul li a {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: #4F5955;
+  opacity: 80%;
+  padding: 2rem;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+.recentProjects ul li a:hover {
+  color: #D9C3A9;
+  opacity: 100%;
+  padding: 4rem;
+  transition: 0.3s;
+}
+
+.brands {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: auto;
+}
+@media (min-width: 1400px) {
+  .brands {
+    gap: 3rem;
+    padding: 3rem;
+  }
+}
 .SmilingContainer {
   background-color: #F7F7F7;
   display: grid;

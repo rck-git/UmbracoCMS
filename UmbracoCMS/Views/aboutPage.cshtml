@@ -3,11 +3,12 @@
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
 @{
 	Layout = "mainLayout.cshtml";
+
 }
 
 <h1>
 	@Model.Value("title")
 </h1>
     
-
+@await Html.PartialAsync("static/brands")
 @await Html.PartialAsync("static/nextProjectSmilingGuy")
