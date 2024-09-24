@@ -14,27 +14,8 @@
 		@Model.Value("servicesTitle", fallback: Fallback.ToAncestors)
 	</h1>
 	@await Html.PartialAsync("static/ourServices")
-@* <h1>
-	@ViewBag.Title
-</h1>
-<div class="servicesOverview">
-	<ul>
-		@foreach (var item in selection)
-		{
-			<li>
-				<h2>
-					@item.Value("detailsMainTitle")
-				</h2>
 
-				<img src="@item.Value("detailMainImage")" alt="Details image">
-				<p>
-					@item.Value("detailPreviewParagraph")
-				</p>
-				<a href="@item.Url()">@item.Name()</a>
-			</li>
-		}
-	</ul>
-</div> *@
+	@await Html.PartialAsync("static/paginationdemo")
 </div>
 @await Html.PartialAsync("static/nextProjectSmilingGuy")
 

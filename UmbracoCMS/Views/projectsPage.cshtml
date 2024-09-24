@@ -7,21 +7,44 @@
     .ChildrenOfType("projectDetailsPage")
     .Where(x => x.IsVisible());
 }
-<div class="projectsOverview">
-	<ul>
-		@foreach (var item in selection)
-		{
-			<li>
-				<h2>
-					@Model.Value("projectMainTitle", fallback: Fallback.ToAncestors)
-				</h2>
-				
-				<img src="@item.Value("projectMainImage")" alt="project image">
-				<p>
-					@item.Value("projectsPreviewParagraph")
-				</p>
-				<a href="@item.Url()">@item.Name()</a>
-			</li>
-		}
-	</ul>
+<div class="projectsPage container">
+	<div class="projectsOverview">
+		<ul>
+			@foreach (var item in selection)
+			{
+				<li>
+					<img src="@item.Value("projectMainImage")" alt="project image">
+
+					<div class="project-text">
+						<h2>
+							<a href="@item.Url()">@item.Name()</a>
+						</h2>
+						<p class="date">@item.Value("ProjectDate")</p>
+						<p>
+							@item.Value("ProjectPreviewParagraph")
+						</p>
+						<a href="@item.Url()">Read More</a>
+					</div>
+				</li>
+
+			}
+		</ul>
+	</div>
+	<aside>
+		<div class="tags">
+			<h1>Tags</h1>
+			<a>Report</a>
+			<a>Business Plans</a>
+			<a>Insights</a>
+			<a>Business</a>
+			<a>App</a>
+			<a>Project</a>
+			<a>Finance</a>
+			<a>Pricing</a>
+		</div>
+	</aside>
 </div>
+
+@await Html.PartialAsync("static/paginationdemo")
+@await Html.PartialAsync("static/nextProjectSmilingGuy")
+

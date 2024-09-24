@@ -4,11 +4,71 @@
 @{
 	Layout = "mainLayout.cshtml";
 
-}
 
-<h1>
-	@Model.Value("title")
-</h1>
-    
-@await Html.PartialAsync("static/brands")
+	var selection = Umbraco.Content(Guid.Parse("3004c18f-8607-4ad0-ab06-3b727eda80a2"))
+    .ChildrenOfType("expertDetails")
+    .Where(x => x.IsVisible())
+    .OrderBy(x => x.CreateDate);
+
+	int count = 0;
+}
+<div class="about">
+
+	<h1>
+		@Model.Value("title")
+
+	</h1>
+	<div class="ceoSection container">
+		<div class="ceo">
+			<img src="@Model.Value("aboutPageCeoImage")" />
+			<p>@Model.Value("aboutPageCeoParagraph")</p>
+		</div>
+		<div class="ceoText">
+			@Model.Value("aboutPageCeoText")
+		</div>
+	</div>
+	<div class="reviews">
+		<div class="reviewsText">
+			@Model.Value("reviewsText")
+		</div>
+		<div class="reviewsImage">
+			<img src="@Model.Value("reviewsImage")" />
+		</div>
+	</div>
+	<div class="expertsSection">
+		<h2 class="sectionSubText">
+			@Model.Value("expertsSmallTitle")
+		</h2>
+		<h1>
+			@Model.Value("expertsTitle")
+		</h1>
+		<div class="experts container">
+			<ul>
+			@foreach (var item in selection)
+			{
+				count++;
+
+				if (count > 3){
+					<li class="lower">
+					<img src="@item.Value("expertImage")" alt="@item.Value("expertName")"/>
+					<span> @item.Value("expertName") </span>
+					<p>@item.Value("expertJobTitle") </p>				
+				</li>
+				}
+				
+				else{
+					<li>
+					<img src="@item.Value("expertImage")" alt="@item.Value("expertName")"/>	
+					<span> @item.Value("expertName") </span>
+					<p>@item.Value("expertJobTitle") </p>				
+					</li>
+				}
+				
+			}
+			</ul>
+
+		</div>
+	</div>
+</div>
+
 @await Html.PartialAsync("static/nextProjectSmilingGuy")

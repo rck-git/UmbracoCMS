@@ -78,8 +78,7 @@
 	</h1>
 	@await Html.PartialAsync("static/ourServices")
 </section>
-<section class="trusted">
-</section>
+
 <section class="success">
 	<div class="container">
 		<div class="trusted">
@@ -92,7 +91,7 @@
 			<p>
 				@Model.Value("successParagraph")
 			</p>
-			<a class="btn">
+			<a class="btn" href="/about">
 				@Model.Value("successButton")
 			</a>
 			<img id="successBg" src="@Model.Value("successBg")" class="colored-svg" alt="successful background">
