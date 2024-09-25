@@ -19,8 +19,7 @@
 	<h1>
 		@Model.Value("detailedH1")
 	</h1>
-	<ul>
-		
+	<ul class="detailedUlServices">
 		@if(keypoints1 != null)
 		{
 			@foreach (var points in keypoints1)
@@ -42,7 +41,7 @@
 	<p>
 		@Model.Value("detailedParagraph")
 	</p>
-	<ul>
+	<ul class="detailedUlServices">
 		@if (keypoints2 != null)
 		{
 			@foreach (var points in keypoints2)
@@ -65,7 +64,7 @@
 	<p>
 		@Model.Value("detailedParagraph3")
 	</p>
-	<ul>
+	<ul class="detailedUlServices">
 	@if (keypoints3 != null)
 		{
 			@foreach (var points in keypoints3)

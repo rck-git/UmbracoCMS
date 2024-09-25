@@ -3,21 +3,67 @@
 @{
 	Layout = "mainLayout.cshtml";
 
-
+	var tags = Model.Value<IEnumerable<string>>("tags");
 }
-<div class="projectsOverview">
-	<ul>
-		@foreach (var item in selection)
-		{
-			<li>
-				<h2>
-					@item.Value("detailsMainTitle")
-				</h2>
+<div class="projectsPage container">
+	<div class="projectDetails">
+		<span>@Model.Value("projectDate", fallback: Fallback.ToAncestors)</span>
+		<h2>
+			@Model.Value("projectMainTitle", fallback: Fallback.ToAncestors)
+		</h2>
+		<img src="@Model.Value("projectMainImage",fallback:Fallback.ToAncestors)" class="firstPartImage" >
+		<div class="detailed">
+			<div class="firstPart">
+				@Model.Value("firstPart", fallback: Fallback.ToAncestors)
+			</div>
 
-			</li>
-		}
-	</ul>
+			<div class="secondPart">
+				<div class="secondImageDiv">
+					<img src="@Model.Value("secondPartImage",fallback:Fallback.ToAncestors)">
+				</div>
+				<div class="secondText">
+					@Model.Value("secondPart", fallback: Fallback.ToAncestors)
+				</div>
+			</div>
+
+			<div class="thirdPart">
+				<div class="text">
+					@Model.Value("thirdPart", fallback: Fallback.ToAncestors)
+				</div>
+				<div class="thirdImageDiv">
+					<img src="@Model.Value("thirdPartImage",fallback:Fallback.ToAncestors)">
+				</div>
+			</div>
+			<div class="fourthPart">
+				@Model.Value("fourthPart", fallback: Fallback.ToAncestors)
+			</div>
+		</div>
+	</div>
+	<aside>
+		<div class="tags">
+			<h1>Tags</h1>
+			<a>Report</a>
+			<a>Business Plans</a>
+			<a>Insights</a>
+			<a>Business</a>
+			<a>App</a>
+			<a>Project</a>
+			<a>Finance</a>
+			<a>Pricing</a>
+		</div>
+	</aside>
 </div>
+<div class="detailed-tags">
+
+	@if (tags != null)
+	{
+		@foreach (var item in tags)
+		{
+			<p>@item.</p>
+		}
+	}
+</div>
+
 
 @await Html.PartialAsync("static/nextProjectSmilingGuy")
 

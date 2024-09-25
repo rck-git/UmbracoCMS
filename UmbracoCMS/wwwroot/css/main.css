@@ -6,6 +6,10 @@ h1, h2, h3, h4 {
   color: #4F5955;
 }
 
+p {
+  font-family: "Poppins";
+}
+
 .sectionSubText {
   color: #D9C3A9;
   font-size: 14px;
@@ -25,13 +29,33 @@ header .container {
   justify-content: space-between;
 }
 header .container p {
+  font-size: 13px;
   padding: 0;
   margin: 0;
 }
 header .socials {
   display: flex;
+  padding-right: 3rem;
+  height: 100%;
+  box-sizing: border-box;
 }
-
+header .socials .socialItem {
+  display: flex;
+  text-align: center;
+  padding: 0.2rem;
+  border-left: 1px solid #9C9EA6;
+  border-right: 1px solid #9C9EA6;
+}
+header .socials .socialItem img {
+  align-self: center;
+  height: 13px;
+}
+header .socials .socialItem:hover {
+  background-color: #D9C3A9;
+  box-sizing: border-box;
+  border: 1px solid #D9C3A9;
+  transition: 0.2s;
+}
 nav {
   display: flex;
   background-color: white;
@@ -46,6 +70,7 @@ nav {
 nav .container {
   display: flex;
   flex-direction: row;
+  height: 100%;
 }
 nav .container a {
   display: flex;
@@ -54,6 +79,7 @@ nav .container a {
 nav .container ul {
   display: flex;
   width: 80%;
+  height: 100%;
   list-style-type: none;
   justify-content: space-evenly;
 }
@@ -97,14 +123,13 @@ nav .container .searchfield input {
   font-size: 40px;
   color: #4F5955;
 }
-.breadcrumbSection .breadcrumb {
-  display: flex;
+.breadcrumbSection ul li span {
+  margin-left: 1rem;
+  margin-right: 1rem;
 }
-.breadcrumbSection .breadcrumb ul {
-  display: flex;
-  margin: 0;
-}
-.breadcrumbSection .breadcrumb ul li a {
+.breadcrumbSection ul li a {
+  color: #4F5955;
+  text-decoration: none;
   align-self: center;
 }
 
@@ -141,8 +166,8 @@ footer a {
   flex-direction: column;
   position: absolute;
   justify-content: space-evenly;
-  height: 100%;
-  margin: 0px 64px 0px 64px;
+  height: 80%;
+  margin: 3rem 64px 0px 64px;
 }
 .hero .heroContainer .heroText .heroH1 h1 {
   font-size: 70px;
@@ -151,13 +176,16 @@ footer a {
   color: #4F5955;
 }
 .hero .heroContainer .heroText .heroH1 span {
+  width: 50%;
   color: #535656;
   font-size: 70px;
   font-weight: bold;
   text-shadow: 0px 3px 2px;
 }
 .hero .heroContainer .heroText p {
-  display: flex;
+  width: 50%;
+  color: #4F5955;
+  font-size: 16px;
 }
 .hero .heroContainer .heroText .contactButton {
   display: flex;
@@ -167,16 +195,21 @@ footer a {
   color: white;
   text-decoration: none;
   width: 15%;
-  height: 20%;
+  height: 10%;
   border-radius: 5px;
   color: #F2EDDC;
   font-weight: bold;
+  margin-bottom: 2rem;
+  flex-shrink: 0;
 }
 .hero .heroContainer .heroText .contactButton:hover {
   color: #D9C3A9;
 }
 .hero .heroContainer img {
+  z-index: 0;
   width: 100%;
+  height: 90%;
+  object-fit: cover;
 }
 
 .about .ceoSection {
@@ -188,6 +221,12 @@ footer a {
 .about .ceoSection .ceo {
   padding-top: 6rem;
   padding-right: 3rem;
+}
+.about .ceoSection .ceo p {
+  font-size: 16px;
+  padding-top: 1rem;
+  font-style: italic;
+  color: #4F5955;
 }
 .about .reviews {
   display: grid;
@@ -270,6 +309,9 @@ footer a {
 }
 .ourServices h1 {
   text-align: center;
+  font-weight: bold;
+  font-size: 40px;
+  padding-bottom: 1rem;
 }
 .ourServices h6 {
   text-align: center;
@@ -278,8 +320,15 @@ footer a {
 .servicesOverview {
   display: grid;
 }
-.servicesOverview h1 {
-  text-align: center;
+.servicesOverview h2 {
+  display: flex;
+  padding: 1rem 0 1rem 1rem;
+  align-self: start;
+}
+.servicesOverview p {
+  display: flex;
+  padding: 1rem 0 1rem 1rem;
+  align-self: start;
 }
 .servicesOverview a {
   text-decoration: none;
@@ -368,7 +417,7 @@ footer a {
   width: 100%;
 }
 .projectsPage aside .tags a {
-  font-family: Poppins;
+  font-family: "Poppins";
   font-size: 13px;
   color: #4F5955;
   font-weight: 400;
@@ -406,6 +455,62 @@ footer a {
 }
 .projectsOverview ul li .project-text {
   padding: 1rem;
+}
+.projectsOverview ul li .project-text a {
+  text-decoration: none;
+  color: #535656;
+  font-weight: bold;
+  font-size: 14px;
+}
+.projectsOverview ul li .project-text h2 a {
+  font-size: 22px;
+  text-decoration: none;
+  color: #4F5955;
+}
+
+.detailedUl li::marker {
+  color: #5D8C87;
+}
+
+.detailedUlServices li::marker {
+  color: #D9C3A9;
+}
+
+.projectDetails {
+  margin-right: 4rem;
+  color: #535656;
+  font-size: 14px;
+}
+.projectDetails span {
+  color: #9C9EA6;
+  display: block;
+  padding-bottom: 2rem;
+}
+.projectDetails h2 {
+  font-family: "Poppins";
+  font-size: 18px;
+  font-weight: bold;
+}
+.projectDetails .firstPartImage {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.projectDetails .detailed .secondPart {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 2rem 0 2rem 0;
+  gap: 1rem;
+}
+.projectDetails .detailed .secondPart .secondImageDiv img {
+  width: 100%;
+  object-fit: cover;
+}
+.projectDetails .detailed .thirdPart .thirdImageDiv img {
+  width: 100%;
+}
+.projectDetails .detailed .fourthPart {
+  padding: 2rem 0 2rem 0;
 }
 
 .pagination {
@@ -549,6 +654,7 @@ footer a {
   display: flex;
 }
 .projects {
+  margin-top: -5rem;
   padding-bottom: 3rem;
 }
 .projects span {

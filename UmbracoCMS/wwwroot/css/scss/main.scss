@@ -7,11 +7,13 @@ $section-subtext: #D9C3A9;
 $sub-color: #D9C3A9;
 $third-color: #F2EDDC;
 
-
-
-
 h1, h2, h3, h4 {
     color: $primary-color;
+}
+
+
+p {
+    font-family: 'Poppins';
 }
 
 .sectionSubText {
@@ -34,6 +36,7 @@ header {
         justify-content: space-between;
 
         p {
+            font-size: 13px;
             padding: 0;
             margin: 0;
         }
@@ -41,14 +44,45 @@ header {
 
     .socials {
         display: flex;
+        padding-right: 3rem;
+        height: 100%;
+        box-sizing: border-box;
+
+        .socialItem {
+            display: flex;
+            text-align: center;
+            padding: 0.2rem;
+            border-left: 1px solid #9C9EA6;
+            border-right: 1px solid #9C9EA6;
+
+
+            img {
+                align-self: center;
+                height: 13px;
+            }
+
+            &:hover {
+                background-color: $section-subtext;
+                box-sizing: border-box;
+                border: 1px solid $sub-color;
+                transition: 0.2s;
+
+
+                img {
+                }
+            }
+        }
     }
 }
+
+
 
 nav {
     display: flex;
     background-color: white;
     color: $primary-color;
     text-decoration: none;
+
 
     @media (min-width: 1400px) {
         height: 82px;
@@ -57,6 +91,7 @@ nav {
     .container {
         display: flex;
         flex-direction: row;
+        height: 100%;
 
         a {
             display: flex;
@@ -66,12 +101,12 @@ nav {
         ul {
             display: flex;
             width: 80%;
+            height: 100%;
             list-style-type: none;
             justify-content: space-evenly;
 
             li {
                 display: flex;
-
 
                 a {
                     display: flex;
@@ -126,19 +161,17 @@ nav {
         color: $primary-color;
     }
 
-    .breadcrumb {
-        display: flex;
+    ul {
+        li {
+            span{
+                margin-left:1rem;
+                margin-right:1rem;
+            }
 
-
-        ul {
-            display: flex;
-            margin: 0;
-
-            li {
-
-                a {
-                    align-self: center;
-                }
+            a {
+                color: $primary-color;
+                text-decoration: none;
+                align-self: center;
             }
         }
     }
@@ -181,8 +214,10 @@ footer {
             flex-direction: column;
             position: absolute;
             justify-content: space-evenly;
-            height: 100%;
-            margin: 0px 64px 0px 64px;
+            height: 80%;
+            margin: 3rem 64px 0px 64px;
+
+
 
             .heroH1 {
 
@@ -194,6 +229,7 @@ footer {
                 }
 
                 span {
+                    width: 50%;
                     color: #535656;
                     font-size: 70px;
                     font-weight: bold;
@@ -201,9 +237,10 @@ footer {
                 }
             }
 
-
             p {
-                display: flex;
+                width: 50%;
+                color: #4F5955;
+                font-size: 16px;
             }
 
             .contactButton {
@@ -214,11 +251,18 @@ footer {
                 color: white;
                 text-decoration: none;
                 width: 15%;
-                height: 20%;
+                height: 10%;
                 border-radius: 5px;
                 color: $third-color;
                 font-weight: bold;
+                margin-bottom: 2rem;
+                flex-shrink: 0;
 
+                a {
+
+                    span {
+                    }
+                }
 
                 &:hover {
                     color: $sub-color;
@@ -227,7 +271,10 @@ footer {
         }
 
         img {
+            z-index: 0;
             width: 100%;
+            height: 90%;
+            object-fit: cover;
         }
     }
 }
@@ -243,6 +290,13 @@ footer {
         .ceo {
             padding-top: 6rem;
             padding-right: 3rem;
+
+            p {
+                font-size: 16px;
+                padding-top: 1rem;
+                font-style: italic;
+                color: $primary-color;
+            }
         }
     }
 
@@ -351,6 +405,9 @@ footer {
 
     h1 {
         text-align: center;
+        font-weight: bold;
+        font-size: 40px;
+        padding-bottom: 1rem;
     }
 
     h6 {
@@ -364,8 +421,16 @@ footer {
     display: grid;
 
 
-    h1 {
-        text-align: center;
+    h2 {
+        display: flex;
+        padding: 1rem 0 1rem 1rem;
+        align-self: start;
+    }
+
+    p {
+        display: flex;
+        padding: 1rem 0 1rem 1rem;
+        align-self: start;
     }
 
     a {
@@ -462,7 +527,6 @@ footer {
         .tags {
             display: flex;
             flex-direction: column;
-           
             flex-flow: wrap;
 
             h1 {
@@ -471,26 +535,26 @@ footer {
             }
 
             a {
-                font-family:Poppins;
-                font-size:13px;
-                color:$primary-color;
-                font-weight:400;
+                font-family: 'Poppins';
+                font-size: 13px;
+                color: $primary-color;
+                font-weight: 400;
                 width: fit-content;
-                height:60px;
+                height: 60px;
                 padding: 0.5rem 1rem 0.5rem 1rem;
                 margin: 0.2rem;
                 text-align: center;
-                align-items:center;
-                align-self:center;
-                align-content:center;
+                align-items: center;
+                align-self: center;
+                align-content: center;
                 border: 2px solid #e7e5e5;
-                border-radius:30px;
+                border-radius: 30px;
 
-                
+
 
                 &:hover {
                     text-decoration: underline;
-                    background-color:#F7F7F7;
+                    background-color: #F7F7F7;
                 }
             }
         }
@@ -516,8 +580,110 @@ footer {
 
             .project-text {
                 padding: 1rem;
+
+                a {
+                    text-decoration: none;
+                    color: #535656;
+                    font-weight: bold;
+                    font-size: 14px;
+                }
+
+                h2 {
+
+                    a {
+                        font-size: 22px;
+                        text-decoration: none;
+                        color: $primary-color;
+                    }
+                }
             }
         }
+    }
+}
+
+.detailedUl {
+
+    li::marker {
+        color: #5D8C87;
+    }
+}
+
+.detailedUlServices {
+
+    li::marker {
+        color: $sub-color;
+    }
+}
+
+
+
+.projectDetails {
+    margin-right: 4rem;
+    color: #535656;
+    font-size: 14px;
+
+    span {
+        color: #9C9EA6;
+        display: block;
+        padding-bottom: 2rem;
+    }
+
+    h2 {
+        font-family: 'Poppins';
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    .firstPartImage {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+
+
+    .detailed {
+        .firstPart {
+        }
+
+        .secondPart {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            padding: 2rem 0 2rem 0;
+            gap: 1rem;
+
+
+            .secondImageDiv {
+
+                img {
+                    width: 100%;
+                    object-fit: cover;
+                }
+            }
+
+            .secondText {
+            }
+        }
+
+        .thirdPart {
+
+            .thirdImageDiv {
+                img {
+                    width: 100%,
+                }
+            }
+
+            .text {
+            }
+        }
+
+        .fourthPart {
+            padding: 2rem 0 2rem 0;
+        }
+    }
+}
+
+.detailed-tags {
+    p {
     }
 }
 
@@ -725,6 +891,7 @@ footer {
 }
 
 .projects {
+    margin-top: -5rem;
     padding-bottom: 3rem;
 
     span {
