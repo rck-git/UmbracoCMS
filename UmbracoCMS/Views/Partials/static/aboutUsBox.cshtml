@@ -1,0 +1,11 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+
+@{
+    var img = Umbraco.Media(Guid.Parse("4f1b3db0-504e-4325-9604-e4e47cb908f8"));
+}
+<div class="aboutUsBox">
+    <h2>About Us</h2>
+    <img src="@img.Url()" alt="@img.Name()" id="@img.Name()" />
+    <p>Dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non </p>
+</div>

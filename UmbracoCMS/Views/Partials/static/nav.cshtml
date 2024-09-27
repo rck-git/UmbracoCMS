@@ -17,25 +17,27 @@
 <nav>
 		<div class="container">
            
-        <a href="/">
-        <img src="@Model.Value("companyLogo", fallback: Fallback.ToAncestors)" alt="corporate logo">
-		</a>
+            <a href="/">
+            <img src="@Model.Value("companyLogo", fallback: Fallback.ToAncestors)" alt="corporate logo">
+            </a>
 
+                
+            @if (selection?.Length > 0)
+            {          
+            <ul>
+            @foreach (var item in selection)
+            {
+                <li class="@(item.IsAncestorOrSelf(Model) ? "current" : null)">
+                    <a href="@item.Url(PublishedUrlProvider)">@item.Name</a>
+                </li>
+            }
+            </ul>
+            }
             
-		@if (selection?.Length > 0)
-        {          
-        <ul>
-        @foreach (var item in selection)
-        {
-            <li class="@(item.IsAncestorOrSelf(Model) ? "current" : null)">
-                <a href="@item.Url(PublishedUrlProvider)">@item.Name</a>
-            </li>
-        }
-        </ul>
-        }
-		
-		<div class="searchField">
-			<input type="search">
-			<div>
- </div>
+            <div class="searchField">
+                <input type="search">
+                <img style="height:fit-content;" src="@Model.Value("searchIcon", fallback: Fallback.ToAncestors)" alt="searchIcon">
+                
+            <div>
+    </div>
 </nav>

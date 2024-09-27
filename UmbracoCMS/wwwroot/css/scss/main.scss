@@ -52,9 +52,10 @@ header {
             display: flex;
             text-align: center;
             padding: 0.2rem;
-            border-left: 1px solid #9C9EA6;
-            border-right: 1px solid #9C9EA6;
-
+            border-left: 1px solid #9c9ea631;
+            border-right: 1px solid #9c9ea631;
+            box-sizing: border-box;
+            padding: 10px;
 
             img {
                 align-self: center;
@@ -82,6 +83,7 @@ nav {
     background-color: white;
     color: $primary-color;
     text-decoration: none;
+    font-family: "Poppins";
 
 
     @media (min-width: 1400px) {
@@ -131,15 +133,20 @@ nav {
 
         .searchfield {
             display: flex;
+            border: none;
+            position: relative;
 
             input {
                 display: flex;
                 height: fit-content;
                 align-self: center;
+                opacity: 0%;
             }
 
-            i {
-                //
+            img {
+                right: -1rem;
+                top: 2rem;
+                position: absolute;
             }
         }
     }
@@ -154,6 +161,7 @@ nav {
     flex-direction: column;
     padding: 122px 0px 122px 0px;
     background-color: #F7F7F7;
+    font-family: "Poppins";
 
     h3 {
         font-weight: bold;
@@ -163,9 +171,9 @@ nav {
 
     ul {
         li {
-            span{
-                margin-left:1rem;
-                margin-right:1rem;
+            span {
+                margin-left: 1rem;
+                margin-right: 1rem;
             }
 
             a {
@@ -185,16 +193,21 @@ footer {
     width: 100%;
     background-color: #0E0E0E;
     display: flex;
-    padding-left: 7rem;
+    padding: 1rem 0rem 1rem 7rem;
     font-size: 14px;
+    font-family: "Poppins";
+    z-index: 8;
+    position: relative;
 
     p {
         color: $primary-color;
         display: inline;
+        margin-bottom: 0;
     }
 
     a {
         display: inline;
+        font-size: 14px;
         color: $sub-color;
         text-decoration: none;
     }
@@ -273,29 +286,142 @@ footer {
         img {
             z-index: 0;
             width: 100%;
-            height: 90%;
+            height: 85%;
             object-fit: cover;
         }
     }
 }
 
+
 .about {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    margin-bottom: 10rem;
+
+    .ceoDiv {
+        font-family: 'Poppins';
+
+
+
+
+        h6 {
+        }
+
+        h2 {
+            font-weight: bold;
+            font-size: 40px;
+        }
+
+        h5 {
+            font-size: 20px;
+            font-weight: 300;
+            font-style: italic;
+        }
+
+        p {
+            font-size: 14px;
+        }
+
+        img {
+        }
+
+        p {
+        }
+    }
+
+    .callbackForm {
+        position: relative;
+
+        .formBox {
+            box-shadow: 0px 7px 7px 4px #b7b8bc37;
+            position: absolute;
+            background-color: white;
+            border: 1px solid #e7e5e5;
+            width: 80%;
+            top: -13rem;
+
+
+            .topBox {
+                background-color: $primary-color;
+                display: flex;
+                z-index: 5;
+                display: block;
+                height: 50%;
+                flex-shrink: 0;
+                width: 100%;
+                align-content: center;
+
+
+                h3 {
+                    display: flex;
+                    padding: 3rem 0 3rem 2rem;
+                    color: $third-color;
+                    font-weight: bold;
+                    font-size: 30px;
+                }
+            }
+
+            editform {
+                display: flex;
+                flex-direction: column;
+                padding: 2rem;
+                justify-content: space-between;
+
+                p {
+                    font-size: 13px;
+                    color: #535656;
+                }
+
+                input {
+                    margin-top: 1rem;
+                    padding: 1rem;
+                    border: 1px solid #e7e5e5;
+                    align-content: center;
+                    width: 100%;
+                    gap: 1rem;
+                }
+
+                .submitButton {
+                    color: $primary-color;
+                    background-color: $third-color;
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+}
+
+
+.aboutPage {
+    font-family: 'Poppins';
+
+
+    h2 {
+    }
+
     .ceoSection {
         display: flex;
-
-        .ceoText {
-            padding-top: 6rem;
-        }
 
         .ceo {
             padding-top: 6rem;
             padding-right: 3rem;
 
             p {
-                font-size: 16px;
+                font-size: 14px;
                 padding-top: 1rem;
-                font-style: italic;
                 color: $primary-color;
+            }
+        }
+
+        .ceoText {
+            padding-top: 6rem;
+
+            .aboutCeoText {
+
+                h2 {
+                    font-style: italic;
+                    font-size: 20px;
+                }
             }
         }
     }
@@ -511,6 +637,74 @@ footer {
                 color: #535656;
                 padding: 1rem;
             }
+        }
+    }
+}
+
+.detailedServicePage {
+    display: grid;
+    grid-template-columns: 20% 80%;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+
+    aside {
+        padding-right: 2rem;
+
+        .canHelpEmailBox {
+        }
+
+        .aboutUsBox {
+            display: flex;
+            position: relative;
+            flex-direction: column;
+            justify-content: center;
+            margin-top: 4rem;
+            border-radius: 5px;
+            margin-bottom: 50px;
+            padding-bottom: 3rem;
+            width: 100%;
+            height: 214px;
+            font-family: 'Poppins';
+
+            h2 {
+                justify-self: start;
+                font-size: 22px;
+            }
+
+            p {
+                padding-top: 1rem;
+                font-size: 14px;
+            }
+
+            img {
+                width: 100%;
+            }
+        }
+    }
+
+    .detail {
+        font-family: 'Poppins';
+        padding-left: 2rem;
+        padding-bottom: 2rem;
+        border-left: 1px solid #e7e5e5;
+        padding-bottom: 4rem;
+
+        h1, h2, h3, h4, h4 {
+            font-weight: bold;
+        }
+
+        #detailMainImage {
+            padding-bottom: 1rem;
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        #detailedSecondImage {
+            padding-bottom: 1rem;
+            display: block;
+            width: 100%;
+            height: auto;
         }
     }
 }
@@ -980,40 +1174,328 @@ footer {
 
 .SmilingContainer {
     background-color: #F7F7F7;
-    display: grid;
-    padding-top: 3rem;
-    grid-template-columns: 1fr 1fr;
 
-    .contactInfo {
+
+
+    .container {
+        width: 100%;
+        height: 80%;
         display: grid;
+        grid-template-columns: 1fr 1fr;
+        overflow: hidden;
+
+        .contactInfo {
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            color: $primary-color;
+            flex-direction: column;
+            width: 50%;
+            margin-bottom: 3rem;
+            margin-left: 8rem;
+            gap: 1rem;
+
+
+            span {
+                font-weight: bold;
+                font-size: 14px;
+                font-family: 'Poppins';
+            }
+
+            h2 {
+                color: $primary-color;
+                font-size: 40px;
+                font-weight: bold;
+            }
+
+            img {
+                padding-right: 5px;
+            }
+
+            div {
+
+                p {
+                    padding-left: 22 px;
+                }
+            }
+        }
+
+        .happyGuy {
+            display: flex;
+            position: relative;
+            left: 30%;
+            z-index: 3;
+
+            #bgOddSquare {
+                display: flex;
+                flex-shrink: 0;
+                position: absolute;
+                z-index: -1;
+                left: -30px;
+                bottom: -50px;
+            }
+
+            #dot {
+                display: flex;
+                flex-shrink: 0;
+                position: absolute;
+                z-index: -55;
+                right: 15rem;
+                bottom: 0rem;
+                width: 25%;
+            }
+
+            #guy {
+                display: flex;
+                flex-shrink: 0;
+                position: absolute;
+                height: 90%;
+                width: auto;
+                bottom: 0;
+            }
+        }
+    }
+}
+
+.canHelpEmailBox {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    background-color: $primary-color;
+    margin-top: 2rem;
+    padding: 1rem;
+    width: 100%;
+    height: 214px;
+    font-family: 'Poppins';
+
+    h5 {
+        width: 100%;
+        color: $third-color;
+        font-weight: bold;
     }
 
-    .happyGuy {
-        display: grid;
+    p {
+        color: white;
+        font-size: 14px;
+    }
+
+
+    .inputBox {
         position: relative;
-        left: 30%;
-        z-index: 3;
 
-        #bgOddSquare {
+        input {
+            margin-top: 1rem;
+            height: 35px;
+            width: 100%;
+            justify-content: center;
+            border-radius: 5px;
+            padding-left: 1rem;
+            color: #9C9EA6;
+            font-style: italic;
+            border: 0;
+        }
+
+        #emailSmall {
+            width: 2rem;
             position: absolute;
-            z-index: -1;
+            height: auto;
+            color: $primary-color;
+            background-color: white;
+            color: black;
+            right: 5px;
             bottom: 0;
-            left: -30; /* Note: This value may need a unit (e.g., px) */
-            height: 64%;
-            width: 40%;
+        }
+    }
+
+    #emailBg {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        z-index: 5;
+    }
+}
+
+.formBox2 {
+    display: grid;
+    font-family: 'Poppins';
+    gap: 1rem;
+    padding-bottom: 2rem;
+    border-radius: 5px;
+    height: 350px;
+    grid-template-areas: "formHeader formHeader""formName formEmail" "formQuestion formQuestion" "formButton formButton";
+
+    h2 {
+        grid-area: formHeader;
+        font-weight: bold;
+    }
+
+    #formName {
+        grid-area: formName;
+        height: 52px;
+        width: 100%;
+        height: 100%;
+        padding-left: 1rem;
+        font-style: italic;
+    }
+
+    #formEmail {
+        grid-area: formEmail;
+        height: 52px;
+        width: 100%;
+        height: 100%;
+        padding-left: 1rem;
+        font-style: italic;
+    }
+
+    #formQuestion {
+        padding-left: 1rem;
+        grid-area: formQuestion;
+        height: 100px;
+        font-style: italic;
+        border: 1px solid #e7e5e5;
+    }
+
+    #submitButton {
+        grid-area: formButton;
+        background-color: $primary-color;
+        font-weight: bold;
+        height: 100%;
+        color: $third-color;
+        border: 0px;
+        border-radius: 2px;
+    }
+
+
+
+
+    input {
+        border: 1px solid #e7e5e5;
+    }
+
+
+
+    button {
+        display: block;
+        width: 20%;
+        height: 100%;
+    }
+}
+
+.contactPage {
+    .SmilingContainer {
+        background-color: white;
+    }
+
+    .mapBox {
+        position: relative;
+        z-index: 0;
+        padding-bottom: 15rem;
+
+
+        img {
+            width: 100%;
+            filter: brightness(70%);
         }
 
-        #dot {
+        .formBox3 {
+            box-shadow: 0px 1px 20px 5px #e7e5e5;
             position: absolute;
-            z-index: -55;
-            left: 11%;
-            width: 25%;
-            height: 100%;
-        }
+            bottom: 0;
+            left: 23%;
+            width: 65%;
+            background-color: white;
+            border-radius: 2px;
+            display: grid;
+            font-family: 'Poppins';
+            gap: 1rem;
+            padding-bottom: 2rem;
+            padding-left: 5rem;
+            padding-right: 5rem;
+            border-radius: 5px;
+            height: 500px;
+            align-content: center;
+            justify-content: center;
+            text-align: center;
+            grid-template-areas:
+                "formSpan formSpan" "formHeader formHeader" "formP formP" "formName formPhone" "formEmail formConsulting" "formButton formButton";
 
-        #guy {
-            height: 100%;
-            width: 25%;
+
+
+            span {
+                grid-area: formSpan;
+            }
+
+            h2 {
+                grid-area: formHeader;
+                font-weight: bold;
+            }
+
+            #formP {
+                grid-area: formP;
+                padding-left: 15rem;
+                padding-right: 15rem;
+                font-size: 14px;
+                font-style: italic;
+            }
+
+            #formName {
+                grid-area: formName;
+                height: 52px;
+                width: 100%;
+                padding-left: 1rem;
+                font-style: italic;
+            }
+
+            #formPhone {
+                grid-area: formPhone;
+                height: 52px;
+                width: 100%;
+                padding-left: 1rem;
+                font-style: italic;
+            }
+
+            #formEmail {
+                padding-left: 1rem;
+                grid-area: formEmail;
+                font-style: italic;
+                border: 1px solid #e7e5e5;
+                height: 52px;
+            }
+
+            #formConsulting {
+                grid-area: formConsulting;
+                padding-left: 1rem;
+            }
+
+            #submitButton {
+                grid-area: formButton;
+                display: block;
+                background-color: $primary-color;
+                font-weight: bold;
+                height: 52px;
+                width: 30%;
+                justify-self: center;
+                color: $third-color;
+                border: 0px;
+                border-radius: 2px;
+                margin-top: 2rem;
+            }
+
+
+            input {
+                border: 1px solid #e7e5e5;
+            }
+
+
+
+            button {
+                display: block;
+                width: 20%;
+                height: 100%;
+            }
         }
     }
 }

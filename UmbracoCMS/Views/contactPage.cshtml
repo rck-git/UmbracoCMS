@@ -3,5 +3,26 @@
 @{
 	Layout = "mainLayout.cshtml";
 }
+<div class="contactPage">
+	@await Html.PartialAsync("static/nextProjectSmilingGuy")
 
-@await Html.PartialAsync("static/nextProjectSmilingGuy")
+
+	<div class="mapBox">
+		<img src="@Model.Value("mapBg", fallback: Fallback.ToAncestors)" alt="map" />
+		<div class="formBox3 container">
+			<span class="sectionSubText">Request a call back</span>
+			<h2>
+				Let us know about your
+				next project
+			</h2>
+			<p id="formP">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas consectetur, ligula semper sagittis lobortis, eros metus efficitur purus</p>
+			<input placeholder="Name" id="formName" />
+			<input placeholder="Phone" id="formPhone" />
+			<input placeholder="Email address" id="formEmail" />
+			<input placeholder="Financial Consulting" id="formConsulting" />
+			<button type="submit" id="submitButton">Submit</button>
+		</div>
+	</div>
+
+	@await Html.PartialAsync("static/brands")
+</div>

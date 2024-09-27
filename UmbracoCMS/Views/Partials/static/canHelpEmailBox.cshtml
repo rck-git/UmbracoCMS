@@ -1,0 +1,18 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+
+@{
+	var iconEmail = Umbraco.Media(Guid.Parse("85498c65-6af9-41c4-a397-a878a38208d5"));
+	var emailBg = Umbraco.Media(Guid.Parse("26001193-5105-4385-98f1-c3e986a21f58"));
+}
+
+<div class="canHelpEmailBox">
+	<h5>How can we help you?</h5>
+	<p>online support 24/7, we are here to help you</p>
+	<div class="inputBox">
+		<img src="@iconEmail.Url()" id="emailSmall" />
+		<input placeholder="Email address" />
+	</div>
+	<img  src="@emailBg.Url()" id="emailBg" />
+
+</div>

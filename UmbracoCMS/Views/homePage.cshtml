@@ -5,10 +5,10 @@
 	Layout = "mainLayout.cshtml";
 
 	var successList = Model.Value<IEnumerable<string>>("successList");
-		
+
 	var projectList = Umbraco.Content(Guid.Parse("6b344d3a-8e6e-4683-83c4-f208ffc09d73"))
-    .ChildrenOfType("all content")
-    .Where(x => x.IsVisible());
+	.ChildrenOfType("all content")
+	.Where(x => x.IsVisible());
 
 }
 <section class="hero">
@@ -32,8 +32,8 @@
 
 </section>
 
-<section class="about">
-	<div class="container">
+<section class="about container">
+	<div class="ceoDiv">
 		<h6 class="sectionSubText">
 			@Model.Value("aboutSmallTitle")
 		</h6>
@@ -51,25 +51,37 @@
 		<p>
 			@Model.Value("ceoNameParagraph")
 		</p>
-		<!-- <div class="callbackForm">
-			<h6>
-		@Model.Value("formTitle")
-			</h6>
+	</div>
+	<div class="callbackForm">
+		<div class="formBox">
 
+			<div class="topBox">
+				<h3>
+					Request a call back
+				</h3>
+				
+			</div>
 			<editForm enctype="multipart/form-data" novalidate>
 
-				<input type="text" />
-				<label name="@Model.Value("formNameField")" />
+				<p><em>Dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur excepteur sint occaecat</em></p>
 
-				<input type="email" />
-				<label name="@Model.Value("formEmailField") />
+				<input type="text" id="name" placeholder="Name" />
 
-				<input type="tel" />
-				<label name="@Model.Value("formPhoneField")  />
 
-				<input type="submit" value="Submit" class="btn btn-primary">@Model.Value("formSubmitButton")</input>
+				<input type="text" id="email" placeholder="Email address" />
+
+
+				<input type="text" id="phone" placeholder="Phone" />
+
+
+				<input type="text" id="consulting" placeholder="Financial Consulting" />
+
+
+				<input type="submit" value="Submit" class="submitButton">@Model.Value("formSubmitButton")</input>
 			</editForm>
-		</div> -->
+
+		</div>
+
 	</div>
 
 </section>
@@ -141,7 +153,7 @@
 	<h1>
 		@Model.Value("projectsSectionTitle")
 	</h1>
-	
+
 	@await Html.PartialAsync("static/recentProjects")
 </section>
 @await Html.PartialAsync("static/brands")
