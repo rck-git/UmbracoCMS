@@ -21,7 +21,7 @@
 						<h2>
 							<a href="@item.Url()">@item.Name()</a>
 						</h2>
-						<p class="date">@item.Value("ProjectDate")</p>
+						<p class="date"><img src="@Model.Value("projectDateIcon", fallback: Fallback.ToAncestors)" id="dateIcon">@item.Value("ProjectDate")</p>
 						<p>
 							@item.Value("ProjectPreviewParagraph")
 						</p>
